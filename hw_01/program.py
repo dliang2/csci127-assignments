@@ -1,12 +1,12 @@
 def capitalize(name):
-    first = name.split()[0]
-    last = name.split()[1]
+    first = name.split(" ")[0]
+    last = name.split(" ")[1]
     return first.capitalize() + " " +last.capitalize()
 print(capitalize("darren liang"))
 
 def init(name):
     first_initial = name[0]
-    last = name.split()[1]
+    last = name.split(" ")[1]
     return first_initial.capitalize() + ". " + last.capitalize()
 print(init("darren liang"))
 
