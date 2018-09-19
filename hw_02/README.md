@@ -1,4 +1,3 @@
-Names
-
-Darren Liang
-Darren Zou
+people who worked on this
+-Darren Liang
+-Darren Zou
