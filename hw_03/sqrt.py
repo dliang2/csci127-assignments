@@ -4,7 +4,7 @@ def mysqrt(n):
     i = 1
     oldguess = 1
     while i > 0:
-        newguess = ((oldguess + n / oldguess) / 2)
+        newguess = ((oldguess + (n / oldguess)) / 2)
         print(n, oldguess)
         if newguess == oldguess:
             break
