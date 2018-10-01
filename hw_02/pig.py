@@ -1,4 +1,4 @@
-"Darren Liang, Darren Zou"
+# Darren Liang, Darren Zou
 
 vowels = ["a", "e", "i", "o", "u"]
 def piglatinify(word):
