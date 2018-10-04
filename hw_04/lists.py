@@ -37,7 +37,7 @@ def count(l, value):
     return counter # number of times the value appears
 
 def reverse(l):
-    return l[::-1] # return the entire list, but for every -1 number. aka backwards
+    return l[::-1] # return the entire list, but in every -1 step. aka backwards
 
 def isIncreasing(l):
     i = 0
@@ -56,6 +56,7 @@ l = [1, 3, 5, 7, 11, 13, 17]
 l2 = [7, 7, 4, 1 , 0, 0, 1, 4, 7, 7]
 
 #print(build_random_list(5, 100))
+
 print(locate(l, 4)) # should return -1
 print(locate(l2, 1)) # should return 3
 
@@ -69,10 +70,5 @@ print(isIncreasing(l)) # should return True
 print(isIncreasing(l2)) # should return False
 
 print(palindrome(l)) # should return False
-print(palindrome(l2)) # should return True
-
-
-
-        
-        
+print(palindrome(l2)) # should return True    
     
