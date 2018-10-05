@@ -49,7 +49,7 @@ def isIncreasing(l):
     return True
 
 def palindrome(l): # palindrome means the lists should be the same when reversed
-    return l == reverse(l) 
+    return l == reverse(l)
     
 
 l = [1, 3, 5, 7, 11, 13, 17]
