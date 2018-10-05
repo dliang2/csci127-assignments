@@ -55,7 +55,7 @@ def palindrome(l): # palindrome means the lists should be the same when reversed
 l = [1, 3, 5, 7, 11, 13, 17]
 l2 = [7, 7, 4, 1 , 0, 0, 1, 4, 7, 7]
 
-#print(build_random_list(5, 100))
+print(build_random_list(10, 100))
 
 print(locate(l, 4)) # should return -1
 print(locate(l2, 1)) # should return 3
