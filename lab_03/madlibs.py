@@ -2,7 +2,7 @@
 
 import random
 
-exclamations = ["ruh-roh, raggy!", "zoinks!", "jinkies!"]
+exclamations = ["'ruh-roh, raggy!'", "'zoinks!'", "'jinkies!'"]
 adverbs = ["quickly", "amusingly", "sadly"]
 nouns = ["dog", "hammer", "cat", "car", "frog"]
 adjectives = ["cowardly", "questionable", "smelly"]
@@ -45,8 +45,3 @@ def madlibify(paragraph):
 print(madlibify(paragraph1))
 print(madlibify(paragraph2))
 print(madlibify(paragraph3))
-        
-            
-            
-    
-    
