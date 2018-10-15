@@ -1,4 +1,4 @@
-# Darren Liang and Kaitlyn Zheng
+# Darren Liang and Kaitlyn Zhen
 
 import random
 
