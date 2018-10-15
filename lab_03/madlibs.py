@@ -23,6 +23,7 @@ def stringify(l):
 def madlibify(paragraph):
     word_list = paragraph.split()
     madlib_list = []
+    hero = choose_random(heroes)
     for item in word_list:
         if item == "<EXCLAMATION>":
             madlib_list.append(choose_random(exclamations))
@@ -34,10 +35,11 @@ def madlibify(paragraph):
             madlib_list.append(choose_random(adjectives))
         elif item == "<VERB>":
             madlib_list.append(choose_random(verbs))
+        elif item == "<HERO>":
+            madlib_list.append(hero)
         else:
             madlib_list.append(item)
     madlib_paragraph = stringify(madlib_list)
-    madlib_paragraph = madlib_paragraph.replace("<HERO>", choose_random(heroes))
     return madlib_paragraph
 
 print(madlibify(paragraph1))
