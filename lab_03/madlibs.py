@@ -2,15 +2,15 @@
 
 import random
 
-exclamations = ["'ruh-roh, raggy!'", "'zoinks!'", "'jinkies!'"]
+exclamations = ["'ruh-roh!'", "'zoinks!'", "'jinkies!'", "'jeepers'"]
 adverbs = ["quickly", "amusingly", "sadly"]
 nouns = ["dog", "hammer", "cat", "car", "frog"]
 adjectives = ["cowardly", "questionable", "smelly"]
 verbs = ["ate", "walked", "slept"]
-heroes = ["Flash", "Robin", "Thor"]
+heroes = ["Shaggy", "Velma", "Scooby-Doo", "Daphne", "Fred"]
 
 paragraph1 = "<EXCLAMATION> he said <ADVERB> as he jumped into his <NOUN> and drove off with his <ADJECTIVE> wife."
-paragraph2 = "Sam <VERB> the <NOUN> and then <VERB> the <NOUN> later"
+paragraph2 = "Sam <VERB> the <NOUN> and then <VERB> the <NOUN> later."
 paragraph3 = "<HERO> <VERB> in the <NOUN> and then <HERO> <VERB> <NOUN> later."
 
 
@@ -26,15 +26,15 @@ def madlibify(paragraph):
     hero = choose_random(heroes) # makes one unique hero
     for item in word_list: # check through each word
         if item == "<EXCLAMATION>":
-            madlib_list.append(choose_random(exclamations))
+            madlib_list.append(random.choice(exclamations))
         elif item == "<ADVERB>":
-            madlib_list.append(choose_random(adverbs))
+            madlib_list.append(random.choice(adverbs))
         elif item == "<NOUN>":
-            madlib_list.append(choose_random(nouns))
+            madlib_list.append(random.choice(nouns))
         elif item == "<ADJECTIVE>":
-            madlib_list.append(choose_random(adjectives))
+            madlib_list.append(random.choice(adjectives))
         elif item == "<VERB>":
-            madlib_list.append(choose_random(verbs))
+            madlib_list.append(random.choice(verbs))
         elif item == "<HERO>":
             madlib_list.append(hero)
         else:
