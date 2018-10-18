@@ -1,2 +1,0 @@
-# Darren Liang
-# Kaitlyn Zhen

@@ -11,7 +11,7 @@ heroes = ["Shaggy", "Velma", "Scooby-Doo", "Daphne", "Fred"]
 
 paragraph1 = "<EXCLAMATION> he said <ADVERB> as he jumped into his <NOUN> and drove off with his <ADJECTIVE> wife."
 paragraph2 = "Sam <VERB> the <NOUN> and then <VERB> the <NOUN> later."
-paragraph3 = "<HERO> <VERB> in the <NOUN> and then <HERO> <VERB> <NOUN> later."
+paragraph3 = "<HERO> <VERB> in the <NOUN> and then <HERO> <VERB> the <NOUN> later."
 
 
 def choose_random(l): # chooses random element in list
