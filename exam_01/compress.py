@@ -12,7 +12,12 @@ print(compress_word('Special'))
 print(compress_word('apple'))
 
 def sentence(line):
-    return compress_word(line)
+    word_list = line.split(" ")
+    compressed = ""
+    for w in word_list:
+        word = compress_word(w) + " "
+        compressed += word
+    return compressed[:-1] 
 
 print(sentence('I like to eat apple pie.'))
 print(sentence('Who is there'))
