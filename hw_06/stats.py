@@ -37,11 +37,11 @@ def mode(l):
             mode = i
         num += 1
         i += 1
-    return mode
-        
+    return mode   
 
 print(l)
-print("Index of Largest: ", find_largest(l))
-print("Frequency :", frequency(5, l))
-print(mode(l))
-    
+print("Index of Largest:", find_largest(l))
+print("Frequency of 5:", frequency(5, l))
+print("Frequency of 7:", frequency(7, l))
+print("Mode:", mode(l))
+print("Frequency of Mode:", frequency(mode(l), l))
