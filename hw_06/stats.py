@@ -16,7 +16,7 @@ def build_random_list(size, max_value):
 
 l = build_random_list(100, 10)
 
-def find_largest(l):
+def index_largest(l):
     highest = l[0]
     for num in l:
         if num > highest:
@@ -28,8 +28,8 @@ def frequency(value, l):
 
 def mode(l):
     test_mode = l[0] # initial mode is first number of the list
-    max_value = l[find_largest(l)] # highest number of list
-    for i in range(max_value + 1): # go through list from 0 to highest number
+    max_value = l[index_largest(l)] # highest number of list
+    for i in range(1, max_value + 1): # go through list from 1 to highest number
         if frequency(test_mode, l) < frequency(i + 1, l): # compare modes
             test_mode = i + 1 # if number has higher freq count, becomes mode
     mode = test_mode
@@ -37,9 +37,9 @@ def mode(l):
         
 
 print(l)
-print("Index of Largest:", find_largest(l))
+print("Index of Largest:", index_largest(l))
 
-for i in range(1, l[find_largest(l)] + 1):
+for i in range(1, l[index_largest(l)] + 1):
     print("Frequency of " + str(i) + ":", frequency(i, l))
 
 print("Mode:", mode(l))
