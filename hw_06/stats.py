@@ -35,7 +35,15 @@ def mode(l):
     mode = test_mode
     return mode
         
-
+def bucket_mode(l, max_value):
+    tallies = []
+    for i in range(max_value):
+        tallies.append(0)
+    for item in l:
+        tallies[item] = tallies[item] + 1
+    li = index_largest(tallies)
+    return li
+    
 print(l)
 print("Index of Largest:", index_largest(l))
 
@@ -44,3 +52,6 @@ for i in range(1, l[index_largest(l)] + 1):
 
 print("Mode:", mode(l))
 print("Frequency of Mode:", frequency(mode(l), l))
+
+print("Mode:", bucket_mode(l, 100))
+print("Frequency of Mode:", frequency(bucket_mode(l, 100), l))
