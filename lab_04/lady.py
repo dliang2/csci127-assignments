@@ -38,9 +38,9 @@ def check (l, s):
     
 def happyLadybugs(g1_size, g1_info, g2_size, g2_info, g3_size, g3_info, g4_size, g4_info):
     print(check(g1_size, g1_info))
-    print(check(g2, g2_info))
-    print(check(g3, g3_info))
-    print(check(g4, g4_info))
+    print(check(g2_size, g2_info))
+    print(check(g3_size, g3_info))
+    print(check(g4_size, g4_info))
 
 g1_size = 7
 g1_info = "RBY_YBR"
