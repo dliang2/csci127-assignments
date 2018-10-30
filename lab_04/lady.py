@@ -10,10 +10,9 @@ def isHappy(l, s):
     for i in range(1, l):
         if s[i] != s[i - 1] or s[i] != s[i + 1]:
             return False
-    if (first != s[1] or last != s[-2]):
+    if first != s[1] or last != s[-2]:
         return False
     return True
-            
         
 def buckets(s):
     chars = []
@@ -37,19 +36,19 @@ def check (l, s):
                 return "NO"
     return "YES"
     
-def happyLadybugs(game1, game1_info, game2, game2_info, game3, game3_info, game4, game4_info):
-    print(check(game1, game1_info))
-    print(check(game2, game2_info))
-    print(check(game3, game3_info))
-    print(check(game4, game4_info))
+def happyLadybugs(g1_size, g1_info, g2_size, g2_info, g3_size, g3_info, g4_size, g4_info):
+    print(check(g1_size, g1_info))
+    print(check(g2, g2_info))
+    print(check(g3, g3_info))
+    print(check(g4, g4_info))
 
-game1 = 7
-game1_info = "RBY_YBR"
-game2 = 6
-game2_info =" X_Y__X"
-game3 = 2
-game3_info = "__"
-game4 = 6
-game4_info = "B_RRBR"
+g1_size = 7
+g1_info = "RBY_YBR"
+g2_size = 6
+g2_info =" X_Y__X"
+g3_size = 2
+g3_info = "__"
+g4_size = 6
+g4_info = "B_RRBR"
 
-happyLadybugs(game1, game1_info, game2, game2_info, game3, game3_info, game4, game4_info)
+happyLadybugs(g1_size, g1_info, g2_size, g2_info, g3_size, g3_info, g4_size, g4_info)
