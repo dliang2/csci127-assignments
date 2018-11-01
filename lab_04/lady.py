@@ -1,4 +1,6 @@
 def isHappy(l, s):
+    if l == 0:
+        return False
     if l < 2 and s[0] == '_':
         return True
     if l == 2 and s[0] == s[1]:
@@ -28,13 +30,12 @@ def buckets(s):
 
 def check (l, s):
     if isHappy(l, s):
-        pass
+        return "YES"
     elif '_' in s:
         vals = buckets(s)
-        for i in vals:
-            if i < 2:
-                return "NO"
-    return "YES"
+        if min(vals) > 1:
+            return "YES"
+    return "NO" 
     
 def happyLadybugs(g1_size, g1_info, g2_size, g2_info, g3_size, g3_info, g4_size, g4_info):
     print(check(g1_size, g1_info))
