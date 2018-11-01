@@ -1,19 +1,17 @@
 def isHappy(l, s):
-    if l == 0:
-        return False
-    if l < 2 and s[0] == '_':
-        return True
-    if l == 2 and s[0] == s[1]:
-        return True
     if l < 3:
-        return False
-    first = s[0]
-    last = s[-1]
-    for i in range(1, l):
-        if s[i] != s[i - 1] or s[i] != s[i + 1]:
+        if l == 0:
             return False
-    if first != s[1] or last != s[-2]:
-        return False
+        elif l == 1 and s[0] == '_':
+            return True
+        elif l == 2 and s[0] == s[1]:
+            return True
+        else:
+            return False
+    else:
+        vals = buckets(s)
+        if min(vals) < 2:
+            return False
     return True
         
 def buckets(s):
@@ -31,17 +29,11 @@ def buckets(s):
 def check (l, s):
     if isHappy(l, s):
         return "YES"
-    elif '_' in s:
-        vals = buckets(s)
-        if min(vals) > 1:
-            return "YES"
-    return "NO" 
-    
-def happyLadybugs(g1_size, g1_info, g2_size, g2_info, g3_size, g3_info, g4_size, g4_info):
-    print(check(g1_size, g1_info))
-    print(check(g2_size, g2_info))
-    print(check(g3_size, g3_info))
-    print(check(g4_size, g4_info))
+    else:
+        return "NO"
+
+def happyLadybugs(size, info):
+    return check(size, info)
 
 g1_size = 7
 g1_info = "RBY_YBR"
@@ -52,4 +44,7 @@ g3_info = "__"
 g4_size = 6
 g4_info = "B_RRBR"
 
-happyLadybugs(g1_size, g1_info, g2_size, g2_info, g3_size, g3_info, g4_size, g4_info)
+print(happyLadybugs(g1_size, g1_info))
+print(happyLadybugs(g2_size, g2_info))
+print(happyLadybugs(g3_size, g3_info))
+print(happyLadybugs(g4_size, g4_info))
