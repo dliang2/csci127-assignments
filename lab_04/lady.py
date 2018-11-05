@@ -1,19 +1,4 @@
-def isHappy(l, s):
-    if l < 3:
-        if l == 0:
-            return False
-        elif l == 1 and s[0] == '_':
-            return True
-        elif l == 2 and s[0] == s[1]:
-            return True
-        else:
-            return False
-    else:
-        vals = buckets(s)
-        if min(vals) < 2:
-            return False
-    return True
-        
+"""
 def buckets(s):
     chars = []
     vals = []
@@ -25,6 +10,33 @@ def buckets(s):
             else:
                 vals[chars.index(i)] += 1
     return vals
+"""
+
+def isHappy(l, s):
+    if l < 3:
+        if l == 0:
+            return False
+        elif l == 1 and s[0] == '_':
+            return True
+        elif l == 2 and s[0] == s[1]:
+            return True
+        else:
+            return False
+    else:
+        vals = dict(s).values()
+        if min(vals) < 2:
+            return False
+    return True
+        
+def dict(s):
+    d = {}
+    for i in s:
+        if i != '_':
+            if i not in d:
+                d[i] = 1
+            else:
+                d[i] += 1
+    return d
 
 def check (l, s):
     if isHappy(l, s):
@@ -48,3 +60,4 @@ print(happyLadybugs(g1_size, g1_info))
 print(happyLadybugs(g2_size, g2_info))
 print(happyLadybugs(g3_size, g3_info))
 print(happyLadybugs(g4_size, g4_info))
+
