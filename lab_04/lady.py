@@ -11,6 +11,19 @@ def buckets(s):
                 vals[chars.index(i)] += 1
     return vals
 """
+            
+def orig(l, s):
+    if "_" in s:
+        return True
+    else:
+        first = s[0]
+        last = s[-1]
+        if first == s[1] and last == s[-2]:
+            for i in range(1, l):
+                if s[i] == s[i + 1]:
+                    return True
+        else:
+            return False
 
 def isHappy(l, s):
     if l < 3:
@@ -23,10 +36,11 @@ def isHappy(l, s):
         else:
             return False
     else:
-        vals = dict(s).values()
-        if min(vals) < 2:
-            return False
-    return True
+        if orig(l, s):
+            vals = dict(s).values()
+            if min(vals) > 1:
+                    return True
+    return False
         
 def dict(s):
     d = {}
@@ -55,9 +69,12 @@ g3_size = 2
 g3_info = "__"
 g4_size = 6
 g4_info = "B_RRBR"
+g5_size = 4
+g5_info = "ABAB"
 
 print(happyLadybugs(g1_size, g1_info))
 print(happyLadybugs(g2_size, g2_info))
 print(happyLadybugs(g3_size, g3_info))
 print(happyLadybugs(g4_size, g4_info))
+print(happyLadybugs(g5_size, g5_info))
 
