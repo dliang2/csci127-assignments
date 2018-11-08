@@ -38,15 +38,14 @@ def isHappy(l, s):
     else:
         if orig(l, s):
             vals = dict(s).values()
-            if min(vals) > 1:
-                    return True
+            return min(vals) > 1
     return False
         
 def dict(s):
     d = {}
     for i in s:
         if i != '_':
-            if i not in d:
+            if i not in d: # counts.setdefault(bug, 0)
                 d[i] = 1
             else:
                 d[i] += 1
