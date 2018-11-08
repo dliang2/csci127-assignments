@@ -20,8 +20,8 @@ def orig(l, s):
         last = s[-1]
         if first == s[1] and last == s[-2]:
             for i in range(1, l):
-                if s[i] == s[i + 1]:
-                    return True
+                if s[i] != s[i + 1]:
+                    return False
         else:
             return False
 
@@ -69,8 +69,8 @@ g3_size = 2
 g3_info = "__"
 g4_size = 6
 g4_info = "B_RRBR"
-g5_size = 4
-g5_info = "ABAB"
+g5_size = 7
+g5_info = "AABCBCC"
 
 print(happyLadybugs(g1_size, g1_info))
 print(happyLadybugs(g2_size, g2_info))
