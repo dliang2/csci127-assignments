@@ -6,25 +6,16 @@ def read(file):
 
 def clean(text):
     text = read(text)
+    for p in "?!.:,;—\"'“”":
+        text = text.replace(p, " ")
     word_list = text.split()
-    cleaned_list = []
+    word_list = [word.capitalize() for word in word_list]
     for word in word_list:
-         word = word.capitalize()
-         word = word.replace("\n", "")
-         for p in ["?", "!", ".", ":", ";", ",", "'", '"']:
-             word = word.replace(p, "")
-         if "—" in word:
-            for word in word.split('—'):
-                word = word.capitalize()
-                cleaned_list.append(word)
-         else:      
-            cleaned_list.append(word)
+        if not word.replace("-", "").isalpha():
+             word_list.remove(word) 
+    return word_list
 
-         if not word.isalpha() and "-" not in word:
-            cleaned_list.remove(word)
-        
-    return cleaned_list
-
+'''
 def word_count(text):
     d = {}
     word_list = clean(text)
@@ -51,19 +42,22 @@ def least_common(text):
         if v == min_count:
             common_words[k] = v
     return common_words
+'''
 
 def word_pairs(text):
     word_list = clean(text)
     d = {}
     for word in word_list:
-        if word not in d.keys():
-            d[word] = []
-    for word in word_list[:-1]:
-        next = word_list[word_list.index(word) + 1]
-        word_list.pop(word_list.index(word))
-        if word in d.keys():
-            if next not in d[word]:
-                d[word].append(next)
+        d[word] = []
+    counter = 0
+    while counter < len(word_list) - 1:
+        word = word_list[counter]
+        if word_list[counter + 1] not in d[word]:
+            d[word].append(word_list[counter + 1])
+            #if next not in d[word]:
+            #d[word].append(next)
+        counter += 1
+        
     return d
 
 #print(clean("macbeth.txt"))
@@ -72,9 +66,9 @@ def word_pairs(text):
 
 #print("\n")
 
-print(word_pairs("macbeth.txt"))
+#print(word_pairs("macbeth.txt"))
 print(word_pairs("moby-small.txt"))
-print(word_pairs("psalms.txt"))
+#print(word_pairs("psalms.txt"))
 
 #print("\n")
 
