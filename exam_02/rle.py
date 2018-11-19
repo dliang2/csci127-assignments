@@ -1,18 +1,14 @@
 def encode(s):
-    l = [[s[0]]]
-    for i in range(len(s) - 1):
-        if s[i] != s[i - 1]:
-            l.append([s[i]])
+    l = []
+    count = 1
+    for i in range(0, len(s) - 1):
+        if s[i] != s[i + 1]:
+            l.append([s[i], count])
+            count = 1 # reset count
         else:
-            pass
-    counts = []
-    for count in range(len(l)):
-        counts.append(0)
-        
-    # insert counting mechanism here
-        
-    for num in range(len(counts)):
-        l[num].append(num)
+            count += 1
+        last = [s[i], count]
+    l.append(last)
     return l
     
 print(encode("abbaaacddaaa"))
