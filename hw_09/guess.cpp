@@ -4,9 +4,9 @@ int main()
 {
   int response;
   int num;
-  int guess = 45;
-  int upper = 99;
   int lower = 0;
+  int upper = 99;
+  int guess = (lower + upper) / 2;
   std::cout << "Input a Number 0-99: ";
   std::cin >> num;
 
