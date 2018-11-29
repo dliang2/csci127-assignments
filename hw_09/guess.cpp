@@ -1,7 +1,6 @@
 #include <iostream>
 
-int main()
-{
+int main() {
   int response;
   int num;
   int lower = 0;
@@ -24,7 +23,6 @@ int main()
 
     std::cout << "Is " << guess << " the number? Respond with -1, 0, or 1. ";
     std::cin >> response;
-
   }
   std::cout << "I got it!" << std::endl;
   return 0;
