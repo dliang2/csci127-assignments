@@ -15,12 +15,11 @@ print(canMakeWord("orppgma","progrm"))
 def withWild(letters, word):
     for letter in word:
         if letter in letters:
-            if "?" in letters:
-                i = letters.index("?")
-                letters = letters[:i] + letters[i + 1:]
-            else:
-                i = letters.index(letter)
-                letters = letters[:i] + letters[i + 1:]
+            i = letters.index(letter)
+            letters = letters[:i] + letters[i + 1:]
+        elif "?" in letters: # use wild card as last resort
+            i = letters.index("?")
+            letters = letters[:i] + letters[i + 1:]
         else:
             return False
     return True
